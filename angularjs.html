@@ -1,0 +1,40 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+</script> 
+</head>
+<body ng-app="myApp" ng-controller="myctrl" >
+
+<!--
+ng-init="firstname='ram'"{{2+2}}
+{{'capgemini'+'office'}}
+{{2==2}}
+{{['arun','rishab'][1]}}
+The expression o/p is {{firstname}}
+<span ng-bind="firstname"></span>
+<form>
+<input type="text" ng-model="name">
+<p ng-bind="name"></p>-->
+<script>
+//var app=angular.module("myApp",[])
+//app.controller("myctrl",function($scope)
+//{
+//$scope.firstname='Rishab';
+//$scope.lastname='Anand';
+//});
+
+Var app=angular.module('myapp',[]);
+app.directive('myWorld',function(){
+ return{
+                  restrict: 'E',
+                 replace : true,
+                 template: '<h1>Hello</h1>'
+
+};
+
+});
+</script>
+
+
+</body>
+</html>

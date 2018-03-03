@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+</script> 
+<body data-ng-app="myApp" ng-controller="costctrl">
+Enter the name to search <input type="text" ng-model="search">
+{{names|filter:search}}
+<script>
+var app=angular.module('myApp',[]);
+app.controller('costctrl',function($scope)
+{
+$scope.names=['rishab','vijay','divya'];
+});
+</script>
+
+</body>
+</html> 
