@@ -1,0 +1,37 @@
+Users table :
+
+create table Users(
+user_id varchar2(4) PRIMARY KEY,
+user_name varchar2(15) UNIQUE,
+password varchar2(7),
+email_id varchar2(25),
+librarian varchar2(1));
+
+BooksInventory:
+
+create table BooksInventory(
+book_id varchar2(4) PRIMARY KEY,
+book_name varchar2(20),
+author1 varchar2(15),
+author2 varchar2(15),
+publisher varchar2(20),
+YearOfPublication varchar2(4));
+
+BooksRegistration
+
+create table BooksRegistration(
+registration_id varchar2(4) PRIMARY KEY,
+book_id varchar2(4) References BooksInventory(book_id) on delete cascade,
+user_id varchar2(4)  References Users(user_id) on delete cascade,
+registration_date date);
+
+
+create table BooksTransaction(
+transaction_id varchar2(4) PRIMARY KEY,
+registration_id varchar2(4)References BooksRegistration(registration_id)on delete cascade,
+issue_date date, 
+return_date date,
+fine number(3),
+book_id varchar2(4) References BooksInventory(book_id) on delete cascade,
+returnBook varchar2(2),
+user_id varchar2(4)  References Users(user_id) on delete cascade);
